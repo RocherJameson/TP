@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tp javascript</title>
+    <script>
+        // Fonksyon pou kreye yon koulè aleyatwa nan fòmat #RRGGBB
+function kreyeKoule() {
+  const karakterPosib = '0123456789ABCDEF';
+  let koule = '#';
+  
+  for (let i = 0; i < 6; i++) {
+    const aleyatwaIndeks = Math.floor(Math.random() * karakterPosib.length);
+    koule += karakterPosib[aleyatwaIndeks];
+  }
+  
+  return koule;
+}
+
+// Kreye de koulè aleyatwa
+const koule1 = kreyeKoule();
+const koule2 = kreyeKoule();
+
+// Fonksyon pou marye de koulè
+function maryeKoule(k1, k2) {
+  let rezilta = '';
+  
+  for (let i = 0; i < 6; i++) {
+    // Chwazi yon karaktè nan menm pozisyon nan koulè yo
+    const karakte1 = k1[i];
+    const karakte2 = k2[i];
+    
+    // Maryaj karaktè yo
+    rezilta += Math.random() < 0.5 ? karakte1 : karakte2;
+  }
+  
+  return rezilta;
+}
+
+// Marye koulè yo
+const reziltaMaryaj = maryeKoule(koule1, koule2);
+
+// Afiche rezilta yo nan konsòl
+console.info(`Maryaj koulè ${koule1} ak ${koule2} se ${reziltaMaryaj}`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
